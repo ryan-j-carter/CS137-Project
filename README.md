@@ -1,12 +1,12 @@
 # CS137-Project
 
 <h2>Coffee</h2>
-Ethiopia Halo Bariti $14 (happymug)</br>
-Ethiopia Kochere $17 (manzanita)</br>
-Guatemala Antigua Hunapu $15 (manzanita)</br>
-Guatemala Candelaria $17 (stumptown)</br>
-Costa Rica La Minita $14 (happymug)</br>
-Honduras Las Capucas $15 (kean)</br>
+<a href="ethiopiahb.jpg">Ethiopia Halo Bariti</a> $14 (happymug)</br>
+<a href="ethiopiak.jpeg">Ethiopia Kochere</a> $17 (manzanita)</br>
+<a href="guatemalaah.jpg">Guatemala Antigua Hunapu</a> $15 (manzanita)</br>
+<a href="guatemalac.jpg">Guatemala Candelaria</a> $17 (stumptown)</br>
+<a href="costaricalm.jpg">Costa Rica La Minita</a> $14 (happymug)</br>
+<a href="honduraslc.jpg">Honduras Las Capucas</a> $15 (kean)</br>
 
 <h2>Gear</h2>
 <a href="v60copper.jpg">Hario V60 (Copper)</a> $15-$45</br>
