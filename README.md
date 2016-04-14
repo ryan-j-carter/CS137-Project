@@ -1,6 +1,7 @@
 # CS137-Project
 
 <h2>Coffee</h2>
+
 <a href="ethiopiahb.jpg">Ethiopia Halo Bariti</a> $14 (happymug)
   <p>This coffee is from the brand new Halo Bariti co-op south of the Yirgacheffe region. The coffee is creamy with a sweet, blueberry flavor. While typical fruit coffees end with an earthy note, this one ends with a sweet creamy flavor. Other notes include lavendar, rose, and raspberry.</p>
 <a href="ethiopiak.jpeg">Ethiopia Kochere</a> $17 (manzanita)
