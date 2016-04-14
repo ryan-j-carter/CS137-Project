@@ -27,7 +27,8 @@
 <a href="virtuoso.jpg">Baratza Virtuoso</a> $230</br>
 
 <h6>Image Sources</h6>
-Sources are in same order as above.</br>
+Sources are ordered as above, and have license for noncommercial reuse.</br>
+This won't be a priority for this weekend, but we can credit these sources before the final project.</br>
 https://pixabay.com/en/coffee-beans-ethiopia-africa-map-549644/</br>
 http://www.indieplate.com/roasted-whole-ethiopia-yirgacheffe-kochere-coffee-beans-12-oz</br>
 source broken</br>
