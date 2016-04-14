@@ -2,6 +2,7 @@
 
 <h2>Coffee</h2>
 <a href="ethiopiahb.jpg">Ethiopia Halo Bariti</a> $14 (happymug)</br>
+<p style="margin-left:20px;">This coffee is from a brand new co-op in a high altitude south of the Yirgacheffe region. The coffee is creamy with a sweet, blueberry flavor. While typical fruit coffees end with an earthy note, this one ends with a sweet creamy flavor. Other notes include lavendar, rose, and raspberry.</p>
 <a href="ethiopiak.jpeg">Ethiopia Kochere</a> $17 (manzanita)</br>
 <a href="guatemalaah.jpg">Guatemala Antigua Hunapu</a> $15 (manzanita)</br>
 <a href="guatemalac.jpg">Guatemala Candelaria</a> $17 (stumptown)</br>
