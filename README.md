@@ -1,10 +1,12 @@
 # CS137-Project
 
 <h2>Coffee</h2>
-<a href="ethiopiahb.jpg">Ethiopia Halo Bariti</a> $14 (happymug)</br>
-<p style="text-indent:50px;">This coffee is from a brand new co-op in a high altitude south of the Yirgacheffe region. The coffee is creamy with a sweet, blueberry flavor. While typical fruit coffees end with an earthy note, this one ends with a sweet creamy flavor. Other notes include lavendar, rose, and raspberry.</p>
-<a href="ethiopiak.jpeg">Ethiopia Kochere</a> $17 (manzanita)</br>
-<a href="guatemalaah.jpg">Guatemala Antigua Hunapu</a> $15 (manzanita)</br>
+<a href="ethiopiahb.jpg">Ethiopia Halo Bariti</a> $14 (happymug)
+<p>This coffee is from the brand new Halo Bariti co-op south of the Yirgacheffe region. The coffee is creamy with a sweet, blueberry flavor. While typical fruit coffees end with an earthy note, this one ends with a sweet creamy flavor. Other notes include lavendar, rose, and raspberry.</p>
+<a href="ethiopiak.jpeg">Ethiopia Kochere</a> $17 (manzanita)
+  <p>Another coffee near the Yirgacheffe region, the Kochere is a light, floral bean with a tea-like aroma. Notes are reminiscent of lemon and peach tea, with some hints of oranges and melon. This is one of our lighter and more floral coffees, and makes for a great iced coffee as well as a balanced, refreshing hot cup.</p>
+<a href="guatemalaah.jpg">Guatemala Antigua Hunapu</a> $15 (manzanita)
+  <p>In the slopes of Antigua Valley comes this fresh bean grown in wonderful volcanic soils. The aromas include pear, cherries, and rum, while the flavors range from caramel and dark chocolate to apple and lime. </p>
 <a href="guatemalac.jpg">Guatemala Candelaria</a> $17 (stumptown)</br>
 <a href="costaricalm.jpg">Costa Rica La Minita</a> $14 (happymug)</br>
 <a href="hunduraslc.jpg">Honduras Las Capucas</a> $15 (kean)</br>
