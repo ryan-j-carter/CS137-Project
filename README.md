@@ -16,8 +16,8 @@ Honduras Las Capucas $15 (kean)</br>
 
 <a href="hariokettle.jpg">Hario Kettle</a> $35</br>
 <a href="bonavita.jpg">Bonavita Kettle</a> $75</br>
-<a href="encore.jpg>Baratza Encore</a> $130</br>
-<a href="virtuoso.jpg>Baratza Virtuoso</a> $230</br>
+<a href="encore.jpg">Baratza Encore</a> $130</br>
+<a href="virtuoso.jpg">Baratza Virtuoso</a> $230</br>
 
 <h6>Image Sources</h6>
 http://en.kurasu.me/the-hario-v60-redefining-and-refining-the-art-of-the-brew/</br>
