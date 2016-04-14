@@ -27,6 +27,13 @@
 <a href="virtuoso.jpg">Baratza Virtuoso</a> $230</br>
 
 <h6>Image Sources</h6>
+https://pixabay.com/en/coffee-beans-ethiopia-africa-map-549644/</br>
+http://www.indieplate.com/roasted-whole-ethiopia-yirgacheffe-kochere-coffee-beans-12-oz</br>
+source broken</br>
+http://www.georgehowellcoffee.com/country/ethiopia/</br>
+http://www.wellgroundedcoffeeco.com/product/costa-rica/</br>
+http://www.flavor574.com/Drink/Features-2/2014/07/10/Zen-Cafe-funds-coffee-nursery-for-Honduras-grower.html</br>
+</br>
 http://en.kurasu.me/the-hario-v60-redefining-and-refining-the-art-of-the-brew/</br>
 https://ineedcoffee.com/kalita-wave-coffee-brewing-tutorial/</br>
 http://i.huffpost.com/gen/1407388/images/o-AEROPRESS-COFFEE-facebook.jpg</br>
