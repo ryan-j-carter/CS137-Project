@@ -127,6 +127,34 @@ body {
 	margin-top:50px;
 }
 
+#content {
+	
+}
+
+table {
+	float: center;
+	display:block;
+	width:900px;
+	margin:50px auto 50px auto;
+	background-color:#333;
+	color:white;
+	border-radius:5px;
+	box-shadow:5px 5px black;
+	text-shadow:1px 1px 1px #111;
+}
+
+td {
+	font-size: 135%;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	margin: 10px;
+}
+
+td img {
+	height: 150px;
+}
+
 #team {
 	padding:20px 0 20px 0;
 }
