@@ -12,7 +12,7 @@ body {
     background-color:#936a4a;
     background-image:url("images/coffee_cup_pixel.gif");
     background-size:170px 170px;
-    /*background-position:center;*/
+    background-position:center;
     font-family:Helvetica, Arial;
     color:black;
 }
