@@ -4,11 +4,11 @@
     Project 1
     Group 1
 
-    index.html
+    checkout.html
 -->
 <html>
     <head>
-        <title>Coffee</title>
+        <title>Coffee - Checkout</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="styles.css"/>
@@ -21,7 +21,7 @@
             <div id="left4by3"></div><img id="megelyn" src="images/megelyn.jpg" />
             <div id="center4by3"></div><img id="meguchan" src="images/meguchan.jpg" />
             <div id="right4by3"></div><img id="megerino" src="images/megerino.jpg" />
-            <h1 id="title">Check Out</h1>
+            <h1 id="title">Coffee</h1>
         </div>
         <div id="nav" class="nav_rel">
             <ul>
@@ -30,72 +30,130 @@
              --><li><a href="gear.html">Gear</a></li>
             </ul>
         </div>
-        <div id="overview" class="about">
-			<form>
-				<p>
-					Billing Information:<br /><br />
-					First Name:<br /><input type="text" name="firstname" /><br />
-					Last Name:<br /><input type="text" name="lastname" /><br /><br />
-					Quantity:
-					<select name="quantity" size="1">
-						<option value="0">0</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-					</select><br /><br />
-		
-					Payment Method:<br />
-					<input type="radio" name="payment" value="visa"/>Visa<br />
-					<input type="radio" name="payment" value="master"/>MasterCard<br />
-					<input type="radio" name="payment" value="discover"/>Discover<br />
-					<input type="radio" name="payment" value="amex"/>American Express<br /><br />
-					Card Information:<br /><br />
-					Card Number:<br /><input type="text" name="cardnumber" size="16" maxlength="16"/><br />
-					Name on Card:<br /><input type="text" name="nameoncard" /><br /><br />
-					Expiration Date:
-					<select name="month" size="1">
-						<option>Month</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-					</select>
-					<select name="year" size="1">
-						<option>Year</option>
-						<option value="2016">2016</option>
-						<option value="2017">2017</option>
-						<option value="2018">2018</option>
-						<option value="2019">2019</option>
-						<option value="2020">2020</option>
-						<option value="2021">2021</option>
-						<option value="2022">2022</option>
-						<option value="2023">2023</option>
-						<option value="2024">2024</option>
-						<option value="2025">2025</option>
-						<option value="2026">2026</option>
-						<option value="2027">2027</option>
-					</select><br /><br />
-					Security Code: <input type="text" name="securitycode" size="3" /><br /><br />
-					<input type="reset" value="Clear" />
-					<input type="submit" value="Purchase" />
-				</p>
-			</form>
-			<!-- <script>create_form();</script> -->
+        <div id="firstcontent" class="checkout">
+            <div id="item_info">
+                <img id="co_item_img" src="" alt="What are you buying?">
+                <h2 id="co_item_name" class="co_item_text">Item Name</h2>
+                <h3 id="co_item_price" class="co_item_text">$0</h3>
+                <p id="co_item_desc" class="co_item_text">Description Here.</p>
+            </div>
+            <form name="checkout_form" id="checkout_form" method="get" action="mailto:me@me.me">
+                <div class="form_container">
+                    <h3>Product:</h3>
+                    <select name="product" size="1" onchange="load_changed();">
+                        <option disabled selected>Product</option>
+                        <optgroup label="Gear">
+                            <option value="0">Aeropress</option>
+                            <option value="1">Baratza Encore</option>
+                            <option value="2">Baratza Virtuoso</option>
+                            <option value="3">Bonavita Kettle</option>
+                            <option value="4">Chemex</option>
+                            <option value="5">Hario Kettle</option>
+                            <option value="6">Kalita Wave</option>
+                            <option value="7">V60</option>
+                        </optgroup>
+                        <optgroup label="Beans">
+                            <option value="8">Costa Rica La Minita</option>
+                            <option value="9">Ethiopia Halo Bariti</option>
+                            <option value="10">Ethiopia Kochere</option>
+                            <option value="11">Guatemala Antigua Hunapu</option>
+                            <option value="12">Guatemala Candelaria</option>
+                            <option value="13">Honduras Las Capucas</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form_container">
+                    <h3>Quantity:</h3>
+                    <select name="quantity" size="1">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="form_container">
+                    <h3>Billing Information</h3>
+                    <div class="form_left">
+                        <p>First Name:</p>
+                        <input type="text" name="fname" required>
+                    </div>
+                    <div class="form_right">
+                        <p>Last Name:</p>
+                        <input type="text" name="lname" required>
+                    </div>
+                </div>
+                <div class="form_container">
+                    <div class="form_left">
+                        <p>Address:</p>
+                        <input type="text" name="addr" required>
+                        <p>State:</p>
+                        <input type="text" name="state" size="2" maxlength="2" required>
+                    </div>
+                    <div class="form_right">
+                        <p>City:</p>
+                        <input type="text" name="city" required>
+                        <p>Zip Code:</p>
+                        <input type="text" name="zip" size="5" maxlength="5" required>
+                    </div>
+                </div>
+                <div class="form_container">
+                    <p>Payment Method:</p>
+                    <input type="radio" name="payment" value="visa" checked>Visa<br>
+                    <input type="radio" name="payment" value="master">MasterCard<br>
+                    <input type="radio" name="payment" value="discover">Discover<br>
+                    <input type="radio" name="payment" value="amex">American Express
+                </div>
+                <div class="form_container">
+                    <h3>Card Information:</h3>
+                    <p>Card Number:</p>
+                    <input type="text" name="cardnumber" maxlength="16" required><br>
+                    <p>Name on Card:</p>
+                    <input type="text" name="nameoncard" required><br>
+                    <p>Expiration Date:</p>
+                    <select name="month" size="1" required>
+                        <option>Month</option>
+                        <option value="1">1</option>
+                        <option value="2">1</option>
+                        <option value="3">1</option>
+                        <option value="4">1</option>
+                        <option value="5">1</option>
+                        <option value="6">1</option>
+                        <option value="7">1</option>
+                        <option value="8">1</option>
+                        <option value="9">1</option>
+                        <option value="10">1</option>
+                        <option value="11">1</option>
+                        <option value="12">1</option>
+                    </select>
+                    <select name="year" size="1" required>
+                        <option>Year</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select><br>
+                    <p>Security Code</p>
+                    <input type="text" name="securitycode" size="3" maxlength="3" required>
+                </div>
+                <div class="form_container">
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
         </div>
     </body>
 </html>
