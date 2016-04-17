@@ -70,8 +70,9 @@
                         <option value="9">9</option>
                     </select>
                 </div>
+
                 <div class="form_container">
-                    <h3>Billing Information</h3>
+                    <h3>Shipping Information:</h3>
                     <div class="form_left">
                         <p>First Name:</p>
                         <input type="text" name="fname" required>
@@ -87,6 +88,36 @@
                         <input type="text" name="addr" required>
                         <p>State:</p>
                         <input type="text" name="state" size="2" maxlength="2" required>
+                        <p>Phone Number:</p>
+                        <input type="text" name="pnumber" required>
+                    </div>
+                    <div class="form_right">
+                        <p>City:</p>
+                        <input type="text" name="city" required>
+                        <p>Zip Code:</p>
+                        <input type="text" name="zip" size="5" maxlength="5" required>
+                    </div>
+                </div>
+
+                <div class="form_container">
+                    <h3>Billing Information:</h3>
+                    <div class="form_left">
+                        <p>First Name:</p>
+                        <input type="text" name="fname" required>
+                    </div>
+                    <div class="form_right">
+                        <p>Last Name:</p>
+                        <input type="text" name="lname" required>
+                    </div>
+                </div>
+                <div class="form_container">
+                    <div class="form_left">
+                        <p>Address:</p>
+                        <input type="text" name="addr" required>
+                        <p>State:</p>
+                        <input type="text" name="state" size="2" maxlength="2" required>
+                        <p>Phone Number:</p>
+                        <input type="text" name="pnumber" required>
                     </div>
                     <div class="form_right">
                         <p>City:</p>
@@ -138,10 +169,18 @@
                         <option value="2025">2025</option>
                         <option value="2026">2026</option>
                         <option value="2027">2027</option>
-                    </select><br>
-                    <p>Security Code</p>
+                    </select>
+                    <p>Security Code:</p>
                     <input type="text" name="securitycode" size="3" maxlength="3" required>
                 </div>
+                <div class="form_container">
+                    <p>Shipping Method:</p>
+                    <select name="shipping_method" size="1" required>
+                        <option>Shipping Method</option>
+                        <option value="overnight">Overnight</option>
+                        <option value="2day">2-Days Expedited</option>
+                        <option value="6day">6-Days Ground</option>
+                    </select>
                 <div class="form_container">
                     <input type="reset" value="Reset">
                     <input type="submit" value="Submit">
