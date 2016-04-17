@@ -8,7 +8,7 @@
 -->
 <html>
     <head>
-        <title>Products</title>
+        <title>Coffee - Products</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="styles.css"/>
@@ -17,10 +17,10 @@
         <script src="scripts.js"></script>
     </head>
     <body onload="window_onload();">
-        <div id="header">
-            <div id="left4by3"></div><img id="megelyn" src="images/megelyn.jpg" />
-            <div id="center4by3"></div><img id="meguchan" src="images/meguchan.jpg" />
-            <div id="right4by3"></div><img id="megerino" src="images/megerino.jpg" />
+    	<div id="header">
+            <div id="left4by3"></div><img id="megelyn" src="images/megelyn.jpg" alt="Megelyn Stark"/>
+            <div id="center4by3"></div><img id="meguchan" src="images/meguchan.jpg" alt="Megu-chan"/>
+            <div id="right4by3"></div><img id="megerino" src="images/megerino.jpg" alt="Megerino"/>
             <h1 id="title">Coffee</h1>
         </div>
         <div id="nav" class="nav_rel">
@@ -29,60 +29,79 @@
              --><li><a class="active" href="products.html">Products</a></li>
             </ul>
         </div>
-        <div id="firstcontent" class="content">
-            <p style="text-align: center;">Here are the products we currently offer. Click on any image to make an order!</p>
-        </div>
-		<div class="content">
+		<div id="firstcontent" class="products">
 			<table>
 				<tr>
-					<td>Hario V60 (Copper)</td>
-					<td>$30</td>
-					<td><img src="images/v60copper.jpg" alt="Hario V60 (Copper)"></td>
+					<th scope="col" colspan="1">Tools</th>
 				</tr>
 				<tr>
-					<td>Kalita Wave</td>
-					<td>$25</td>
-					<td><img src="images/kalita.jpg" alt="Kalita Wave"></td>
+					<td>
+						<a href="checkout.html?i=0"><img src="images/aeropress.jpg" alt="Aeropress"></a>
+						<figcaption>Aeropress<br>$25</figcaption>
+					</td>
+					<td>
+						<a href="checkout.html?i=1"><img src="images/encore.jpg" alt="Baratza Encore"></a>
+						<figcaption>Baratza Encore<br>$130</figcaption>
+					</td>
+					<td>
+						<a href="checkout.html?i=2"><img src="images/virtuoso.jpg" alt="Baratza Virtuoso"></a>
+						<figcaption>Barazta Virtuoso<br>$230</figcaption>
+					</td>
+					<td>
+						<a href="checkout.html?i=3"><img src="images/bonavita.jpg" alt="Bonavita Kettle"></a>
+						<figcaption>Bonavita Kettle<br>$75</figcaption>
+					</td>
 				</tr>
 				<tr>
-					<td>Aeropress</td>
-					<td>$25</td>
-					<td><img src="images/aeropress.jpg" alt="Aeropress"></td>
+					<td>
+						<a href="checkout.html?i=4"><img src="images/chemex.jpg" alt="Chemex"></a>
+						<figcaption>Chemex<br>$45</figcaption>
+					</td>
+					<td>
+						<a href="checkout.html?i=5"><img src="images/hariokettle.jpg" alt="Hario Kettle"></a>
+						<figcaption>Hario Kettle<br>$45</figcaption>
+					</td>
+					<td>
+						<a href="checkout.html?i=6"><img src="images/kalita.jpg" alt="Kalita Wave"></a>
+						<figcaption>Kalita Wave<br>$25</figcaption>
+					</td>
+					<td>
+						<a href="checkout.html?i=7"><img src="images/v60copper.jpg" alt="Hario V60 (Copper)"></a>
+						<figcaption>V60<br>$45</figcaption>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<th scope="col" colspan="2">Coffee Beans</th>
 				</tr>
 				<tr>
-					<td>Chemex</td>
-					<td>$45</td>
-					<td><img src="images/chemex.jpg" alt="Chemex"></td>
+					<td class="3_col">
+						<a href="checkout.html?i=8"><img src="images/costaricalm.jpg" alt="Costa Rica La Minita"></a>
+						<figcaption>Costa Rica La Minita<br>$14</figcaption>
+					</td>
+					<td class="3_col">
+						<a href="checkout.html?i=9"><img src="images/ethiopiahb.jpg" alt="Ethiopia Halo Bariti"></a>
+						<figcaption>Ethiopia Halo Bariti<br>$14</figcaption>
+					</td>
+					<td class="3_col">
+						<a href="checkout.html?i=10"><img src="images/ethiopiak.jpeg" alt="Ethiopia Kochere"></a>
+						<figcaption>Ethiopia Kochere<br>$17</figcaption>
+					</td>
 				</tr>
 				<tr>
-					<td>Hario Kettle</td>
-					<td>$35</td>
-					<td><img src="images/hariokettle.jpg" alt="Hario Kettle"></td>
-				</tr>
-				<tr>
-					<td>Bonavita Kettle</td>
-					<td>$75</td>
-					<td><img src="images/bonavita.jpg" alt="Bonavita Kettle"></td>
-				</tr>
-				<tr>
-					<td>Baratza Encore</td>
-					<td>$130</td>
-					<td><img src="images/encore.jpg" alt="Baratza Encore"></td>
-				</tr>
-				<tr>
-					<td>Baratza Virtuoso</td>
-					<td>$230</td>
-					<td><img src="images/virtuoso.jpg" alt="Baratza Virtuoso"></td>
-				</tr>
-				<tr>
-					<td>Ethiopia Halo Bariti</td>
-					<td>$14</td>
-					<td><img src="images/ethiopiahb.jpg" alt="Ethiopia Halo Bariti"></td>
-				</tr>
-				<tr>
-					<td>Guatemala Antigua Hunapu</td>
-					<td>$15</td>
-					<td><img src="images/guatemalaah.jpg" alt="Guatemala Antigua Hunapu"></td>
+					<td class="3_col">
+						<a href="checkout.html?i=11"><img src="images/guatemalaah.jpg" alt="Guatemala Antigua Hunapu"></a>
+						<figcaption>Guatemala Antigua Hunapu<br>$15</figcaption>
+					</td>
+					<td class="3_col">
+						<a href="checkout.html?i=12"><img src="images/guatemalac.jpg" alt="Guatemala Candelaria"></a>
+						<figcaption>Guatemala Candelaria<br>$17</figcaption>
+					</td>
+					<td class="3_col">
+						<a href="checkout.html?i=13"><img src="images/honduraslc.jpg" alt="Honduras Las Capucas"></a>
+						<figcaption>Honduras Las Capucas<br>$15</figcaption>
+					</td>
 				</tr>
 			</table>
 		</div>
