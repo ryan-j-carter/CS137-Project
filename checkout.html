@@ -8,7 +8,7 @@
 -->
 <html>
     <head>
-        <title>Coffee - Checkout</title>
+        <title>JavaSipt - Checkout</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="styles.css"/>
@@ -25,15 +25,15 @@
         </div>
         <div id="firstcontent" class="checkout">
             <div id="item_info">
-                <img id="co_item_img" src="" alt="You shouldn't be here, mate.">
                 <h2 id="co_item_name" class="co_item_text">Item Name</h2>
                 <h3 id="co_item_price" class="co_item_text">$0</h3>
+                <img id="co_item_img" src="" alt="You shouldn't be here, mate.">
                 <p id="co_item_desc" class="co_item_text">Description Here.</p>
             </div>
-            <form name="checkout_form" id="checkout_form" method="get" action="mailto:me@me.me">
+            <form name="checkout_form" id="checkout_form" method="get" action="">
                 <div class="form_container">
                     <h3>Product:</h3>
-                    <select name="product" size="1" onchange="load_changed();">
+                    <select name="product" size="1" onchange="load_changed();" tabindex="1">
                         <option disabled selected>Product</option>
                         <optgroup label="Gear">
                             <option value="0">Aeropress</option>
@@ -57,8 +57,7 @@
                 </div>
                 <div class="form_container">
                     <h3>Quantity:</h3>
-                    <select name="quantity" size="1">
-                        <option value="0">0</option>
+                    <select name="quantity" size="1" tabindex="2">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -70,65 +69,54 @@
                         <option value="9">9</option>
                     </select>
                 </div>
-
                 <div class="form_container">
                     <h3>Shipping Information:</h3>
                     <div class="form_left">
                         <p>First Name:</p>
-                        <input type="text" name="fname" required>
+                        <input type="text" name="fname" tabindex="3" required>
                     </div>
                     <div class="form_right">
                         <p>Last Name:</p>
-                        <input type="text" name="lname" required>
+                        <input type="text" name="lname" tabindex="4" required>
                     </div>
                 </div>
                 <div class="form_container">
                     <div class="form_left">
                         <p>Address:</p>
-                        <input type="text" name="addr" required>
+                        <input type="text" name="addr_s" tabindex="5" required>
                         <p>State:</p>
-                        <input type="text" name="state" size="2" maxlength="2" required>
+                        <input type="text" name="state_s" size="2" maxlength="2" tabindex="7" required>
                         <p>Phone Number:</p>
-                        <input type="text" name="pnumber" required>
+                        <input type="text" name="pnumber_s" size="10" maxlength="10" tabindex="9" required>
                     </div>
                     <div class="form_right">
                         <p>City:</p>
-                        <input type="text" name="city" required>
+                        <input type="text" name="city_s" tabindex="6" required>
                         <p>Zip Code:</p>
-                        <input type="text" name="zip" size="5" maxlength="5" required>
+                        <input type="text" name="zip_s" size="5" maxlength="5" tabindex="8" required>
                     </div>
                 </div>
-
                 <div class="form_container">
                     <h3>Billing Information:</h3>
-                    <div class="form_left">
-                        <p>First Name:</p>
-                        <input type="text" name="fname" required>
-                    </div>
-                    <div class="form_right">
-                        <p>Last Name:</p>
-                        <input type="text" name="lname" required>
-                    </div>
-                </div>
-                <div class="form_container">
+                    <input type="checkbox" name="sameship" onchange="set_shipping();" tabindex="10">Check if billing address is same as above.<br>
                     <div class="form_left">
                         <p>Address:</p>
-                        <input type="text" name="addr" required>
+                        <input type="text" name="addr" tabindex="11" required>
                         <p>State:</p>
-                        <input type="text" name="state" size="2" maxlength="2" required>
+                        <input type="text" name="state" size="2" maxlength="2" tabindex="13" required>
                         <p>Phone Number:</p>
-                        <input type="text" name="pnumber" required>
+                        <input type="text" name="pnumber" size="10" maxlength="10" tabindex="15" required>
                     </div>
                     <div class="form_right">
                         <p>City:</p>
-                        <input type="text" name="city" required>
+                        <input type="text" name="city" tabindex="12" required>
                         <p>Zip Code:</p>
-                        <input type="text" name="zip" size="5" maxlength="5" required>
+                        <input type="text" name="zip" size="5" maxlength="5" tabindex="14" required>
                     </div>
                 </div>
                 <div class="form_container">
                     <p>Payment Method:</p>
-                    <input type="radio" name="payment" value="visa" checked>Visa<br>
+                    <input type="radio" name="payment" value="visa" id="def_payment" tabindex="16" checked>Visa<br>
                     <input type="radio" name="payment" value="master">MasterCard<br>
                     <input type="radio" name="payment" value="discover">Discover<br>
                     <input type="radio" name="payment" value="amex">American Express
@@ -136,12 +124,12 @@
                 <div class="form_container">
                     <h3>Card Information:</h3>
                     <p>Card Number:</p>
-                    <input type="text" name="cardnumber" maxlength="16" required><br>
+                    <input type="text" name="cardnumber" maxlength="16" tabindex="17" required><br>
                     <p>Name on Card:</p>
-                    <input type="text" name="nameoncard" required><br>
+                    <input type="text" name="nameoncard" tabindex="18" required><br>
                     <p>Expiration Date:</p>
-                    <select name="month" size="1" required>
-                        <option>Month</option>
+                    <select name="month" size="1" tabindex="19" required>
+                        <option value="0">Month</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -155,8 +143,8 @@
                         <option value="11">11</option>
                         <option value="12">12</option>
                     </select>
-                    <select name="year" size="1" required>
-                        <option>Year</option>
+                    <select name="year" size="1" tabindex="20" required>
+                        <option value="0">Year</option>
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
                         <option value="2018">2018</option>
@@ -171,19 +159,19 @@
                         <option value="2027">2027</option>
                     </select>
                     <p>Security Code:</p>
-                    <input type="text" name="securitycode" size="3" maxlength="3" required>
+                    <input type="text" name="securitycode" size="3" maxlength="3" tabindex="21" required>
                 </div>
                 <div class="form_container">
                     <p>Shipping Method:</p>
-                    <select name="shipping_method" size="1" required>
-                        <option>Shipping Method</option>
-                        <option value="overnight">Overnight</option>
-                        <option value="2day">2-Days Expedited</option>
-                        <option value="6day">6-Days Ground</option>
+                    <select name="shipping_method" size="1" tabindex="22" required>
+                        <option value="3">6-Days Ground - $3</option>
+                        <option value="6">2-Days Expedited - $6</option>
+                        <option value="10">Overnight - $10</option>
                     </select>
+                </div>
                 <div class="form_container">
-                    <input type="reset" value="Reset">
-                    <input type="submit" value="Submit">
+                    <input type="button" value="Reset" tabindex="23" onclick="form_reset();">
+                    <input type="button" value="Submit" tabindex="24" onclick="return form_validate();">
                 </div>
             </form>
         </div>
