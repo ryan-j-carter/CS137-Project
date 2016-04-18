@@ -6,12 +6,6 @@
     styles.css
 */
 
-:root {
-	--primary-text-color: #111;
-	--primary-color:#b85300;
-	--front-bgcolor:#eee;
-}
-
 div, h1, h2, h3, body, ul, li, img, header, p, tr, th {padding:0; margin:0;}
 
 body {
@@ -19,7 +13,7 @@ body {
     background-size:250px 250px;
     background-position:center top;
     font-family:Helvetica, Arial;
-    color:var(--primary-text-color);
+    color:#111;
 }
 
 #header {
@@ -37,7 +31,7 @@ body {
 	text-align:center;
 	font-size:300%;
 	font-family:"Courier New", monospace;
-	color:var(--primary-color);
+	color:#b85300;
 	text-shadow:2px 2px 1px #111;
 }
 
@@ -54,31 +48,31 @@ body {
 
 #nav {
 	z-index:999;
-	border-bottom:2px solid var(--primary-color);
+	border-bottom:2px solid #b85300;
 }
 
 #nav > ul {
 	list-style-type:none;
 	text-align:center;
 	overflow:hidden;
-	background-color:var(--front-bgcolor);
+	background-color:#eee;
 }
 
 #nav > ul li {display:inline-block;}
 
 #nav > ul li a {
 	display:block;
-	color:var(--primary-text-color);
+	color:#111;
 	border-bottom:3px solid;
-	border-bottom-color:var(--front-bgcolor);
+	border-bottom-color:#eee;
 	padding:14px 16px 11px 16px;
 	text-decoration:none;
 }
 
 #nav > ul li a:hover:not(.active) {
-	color:var(--primary-color);
+	color:#b85300;
 	border-bottom:3px solid;
-	border-bottom-color:var(--primary-color);
+	border-bottom-color:#b85300;
     -webkit-transition:color .3s ease, border-bottom-color .3s ease;
     -moz-transition:color .3s ease, border-bottom-color .3s ease;
     -ms-transition:color .3s ease, border-bottom-color .3s ease;
@@ -87,22 +81,22 @@ body {
 }
 
 #nav > ul li a.active {
-	color:var(--primary-color);
-	border-bottom:3px solid var(--primary-color);
+	color:#b85300;
+	border-bottom:3px solid #b85300;
 }
 
 .content {
 	display:block;
 	width:640px;
 	margin:50px auto 0px auto;
-	background-color:var(--front-bgcolor);
-	color:var(--primary-text-color);
+	background-color:#eee;
+	color:#111;
 	
 }
 
 .content h2 {
 	font-size:250%;
-	color:var(--primary-color);
+	color:#b85300;
 	margin-right:30px;
 	margin-left:30px;
 	padding-top:30px;
@@ -123,13 +117,13 @@ body {
 	position:relative;
 	width:865px;
 	margin:50px auto 50px auto;
-	background-color:var(--front-bgcolor);
-	color:var(--primary-text-color);
+	background-color:#eee;
+	color:#111;
 }
 
 table {
 	text-align:center;
-	color:var(--primary-text-color);
+	color:#111;
 	width:100%;
 	margin:0 auto;
 }
@@ -137,12 +131,12 @@ th {
 	text-align:left;
 	padding:30px 30px 0 30px;
 	font-size:250%;
-	color:var(--primary-color);
+	color:#b85300;
 }
 
 .hr_div {
 	width:100%;
-	border-bottom:2px solid var(--primary-color);
+	border-bottom:2px solid #b85300;
 }
 
 td {
@@ -177,7 +171,7 @@ td a img:hover {
 	margin:50px auto 10px auto;
 	padding:10px;
 	background-color:#eee;
-	color:var(--primary-text-color);
+	color:#111;
 }
 
 #item_info {
