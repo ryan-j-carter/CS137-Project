@@ -37,8 +37,8 @@
  }
 
  /*
-	load_changed() and set_checkout() update the checkout.html
-	page to ensure the correct item is displayed
+	load_changed() and set_checkout() 
+	Update the checkout.html page to ensure the correct item is displayed
 
 	query_param(field) parses the url query and returns the specified variable 'field'
  */
@@ -80,7 +80,7 @@ var query_param = function(field) {
 	var href = window.location.href;
 	var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i');
 	var val = reg.exec(href);
-	return val ? val[1] : null;
+	return val ? val[1] : "0";
 };
 
 function set_checkout() {
@@ -89,6 +89,12 @@ function set_checkout() {
 	item.value = index;
 	load_changed();
 }
+
+/*
+	set_shipping()
+	When checkbox is checked, set shipping address equal to billing address
+	When checkbox is unchecked, clear shipping address
+*/
 
 function set_shipping() {
 	var frm = document.checkout_form;
@@ -108,7 +114,13 @@ function set_shipping() {
 	}
 }
 
+/*
+	form_reset()
+	Resets each field in the form.
+*/
+
 function form_reset() {
+	//Tried using a for loop with a switch, but trying to use elements[index] threw an error.
 	var frm = document.checkout_form;
 	frm.quantity.value = "1";
 
@@ -140,9 +152,10 @@ function form_reset() {
 	document.getElementById("def_shipping").checked = true;
 }
 
-function has_num(n) {
-	return n.match(/\d+/g) != null;
-}
+/*
+	mail_order_body()
+	Pulls necessary values from the form and creates a formatted order receipt in the body of an email.
+*/
 
 function mail_order_body() {
 	var frm = document.checkout_form;
@@ -168,6 +181,16 @@ function mail_order_body() {
 
 	window.location.href = "mailto:email@address.com?body=" + encodeURIComponent(ebody);
 }
+
+function has_num(n) {
+	return n.match(/\d+/g) != null;
+}
+
+/*
+	form_validate()
+	Makes sure every field contains some value.
+	Ensures certain fields are only numeric or only alphabetic.
+*/
 
 function form_validate() {
 	var messages = [];
@@ -223,6 +246,4 @@ function form_validate() {
 
 	return true;
 }
-
-
 
