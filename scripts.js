@@ -90,5 +90,139 @@ function set_checkout() {
 	load_changed();
 }
 
+function set_shipping() {
+	var frm = document.checkout_form;
+	if (frm.sameship.checked) {
+		frm.addr.value = frm.addr_s.value;
+		frm.city.value = frm.city_s.value;
+		frm.state.value = frm.state_s.value;
+		frm.zip.value = frm.zip_s.value;
+		frm.pnumber.value = frm.pnumber_s.value;
+	}
+	else {
+		frm.addr.value = "";
+		frm.city.value = "";
+		frm.state.value = "";
+		frm.zip.value = "";
+		frm.pnumber.value = "";
+	}
+}
+
+function form_reset() {
+	var frm = document.checkout_form;
+	frm.quantity.value = "1";
+
+	frm.fname.value = frm.fname.defaultValue;
+	frm.lname.value = frm.lname.defaultValue;
+
+	frm.addr.value = frm.addr.defaultValue;
+	frm.state.value = frm.state.defaultValue;
+	frm.city.value = frm.city.defaultValue;
+	frm.zip.value = frm.zip.defaultValue;
+	frm.pnumber.value = frm.pnumber.defaultValue;
+
+	frm.sameship.checked = false;
+
+	frm.addr_s.value = frm.addr_s.defaultValue;
+	frm.state_s.value = frm.state_s.defaultValue;
+	frm.city_s.value = frm.city_s.defaultValue;
+	frm.zip_s.value = frm.zip_s.defaultValue;
+	frm.pnumber_s.value = frm.pnumber_s.defaultValue;
+
+	document.getElementById("def_payment").checked = true;
+
+	frm.cardnumber.value = frm.cardnumber.defaultValue;
+	frm.nameoncard.value = frm.nameoncard.defaultValue;
+	frm.month.value = "0";
+	frm.year.value = "0";
+	frm.securitycode.value = frm.securitycode.defaultValue;
+
+	document.getElementById("def_shipping").checked = true;
+}
+
+function has_num(n) {
+	return n.match(/\d+/g) != null;
+}
+
+function mail_order_body() {
+	var frm = document.checkout_form;
+	var item_name = document.getElementById("co_item_name").innerHTML;
+	var item_price = document.getElementById("co_item_price").innerHTML;
+	var subtotal = "$" + (parseInt(item_price.replace(/[^0-9]+/g,"")) * parseInt(frm.quantity.value) + parseInt(frm.shipping_method.value)).toString() + ".00";
+
+	var ebody = "Order Receipt\n" 
+	+			"---------------------------------------\n"
+	+			item_name + " - " + item_price
+	+ 			"\nQuantity: " + frm.quantity.value
+	+			"\nShipping Speed: " + frm.shipping_method.options[frm.shipping_method.selectedIndex].text
+	+ 			"\nSubtotal: " + subtotal + "\n"
+	+			"Card Number: xxxxxxxxxxxx" + frm.cardnumber.value.substring(12,16) 
+	+			"\n\nBilling Information: \n"
+	+			frm.fname.value + " " + frm.lname.value + "\n"
+	+			frm.addr.value + "\n"
+	+			frm.city.value + ", " + frm.state.value + " " + frm.zip.value + "\n\n"
+	+			"Shipping Address: \n"
+	+			frm.addr_s.value + "\n"
+	+			frm.city_s.value + ", " + frm.state_s.value + " " + frm.zip_s.value
+	+			"\n\nThank you for your order!\n\n";
+
+	window.location.href = "mailto:email@address.com?body=" + encodeURIComponent(ebody);
+}
+
+function form_validate() {
+	var messages = [];
+	var frm = document.checkout_form;
+	if (frm.fname.value === "") {messages.push("Enter your first name.");}
+	if (frm.lname.value === "") {messages.push("Enter your last name.");}
+	if (frm.addr.value === "") {messages.push("Enter an address in Billing.");}
+	if (frm.city.value === "") {messages.push("Enter a city in Billing.");}
+
+	if (frm.state.value.length < 2 || has_num(frm.state.value)) {
+		messages.push("Enter a valid state in Billing.");
+	}
+	if (frm.zip.value.length < 5 || isNaN(frm.zip.value)) {
+		messages.push("Enter a valid zip code in Billing.");
+	}
+	if (frm.pnumber.value.length < 10 || isNaN(frm.pnumber.value)) {
+		messages.push("Enter a valid phone number in Billing.");
+	}
+
+	if (frm.addr_s.value === "") {messages.push("Enter an address in Shipping.");}
+	if (frm.city_s.value === "") {messages.push("Enter a city in Shipping.");}
+
+	if (frm.state_s.value.length < 2 || has_num(frm.state_s.value)) {
+		messages.push("Enter a valid state in Shipping.");
+	}
+	if (frm.zip_s.value.length < 5 || isNaN(frm.zip_s.value)) {
+		messages.push("Enter a valid zip code in Shipping.");
+	}
+	if (frm.pnumber_s.value.length < 10 || isNaN(frm.pnumber_s.value)) {
+		messages.push("Enter a valid phone number in Shipping.");
+	}
+
+	if (frm.cardnumber.value.length < 16 || isNaN(frm.cardnumber.value)) {
+		messages.push("Enter a valid card number.");
+	}
+	if (frm.nameoncard.value === "") {messages.push("Enter a card number.");}
+
+	if (frm.month.value === "0") {
+		messages.push("Select a month.");
+	}
+	if (frm.year.value === "0") {
+		messages.push("Select a year.");
+	}
+	if (frm.securitycode.value.length < 3 || isNaN(frm.securitycode.value)) {
+		messages.push("Enter a valid security code.");
+	}
+	if (messages.length > 0) {
+		if (messages.length > 5) {alert("Please fill out the form.");}
+		else {alert(messages.join('\n'));}
+		return false;
+	}
+	mail_order_body();
+
+	return true;
+}
+
 
 
