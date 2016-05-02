@@ -186,6 +186,43 @@ function has_num(n) {
 	return n.match(/\d+/g) != null;
 }
 
+function submit_order() {
+	var frm = document.checkout_form;
+	var xhttp = new XMLHttpRequest();
+	var item_name = document.getElementById("co_item_name").innerHTML;
+
+	xhttp.onreadystatechange = function() {
+		if(xhttp.readyState == 4 && xhttp.status == 200){
+			alert("Submission Complete."); // CHANGE THIS FUNCTION TO BE A CONFIRMATION
+		}
+	}
+
+	xhttp.open("POST", "submit_order.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("first_name="+frm.fname.value+"&last_name="+frm.lname.value+
+			"&product_name="+item_name+
+			"&quantity="+frm.quantity.value+
+			"&ship_address="+frm.addr_s.value+
+			"&ship_city="+frm.city_s.value+
+			"&ship_state="+frm.state_s.value+
+			"&ship_zip="+frm.zip_s.value+
+			"&ship_phone="+frm.pnumber_s.value+	
+			"&bill_address="+frm.addr.value+
+			"&bill_city="+frm.city.value+
+			"&bill_state="+frm.state.value+
+			"&bill_zip="+frm.zip.value+
+			"&bill_phone="+frm.pnumber.value+
+			"&payment_method="+frm.payment.value+
+			"&card_number="+frm.cardnumber.value+
+			"&card_name="+frm.nameoncard.value+
+			"&card_expiration_month="+frm.month.value+
+			"&card_expiration_year="+frm.year.value+
+			"&card_security="+frm.securitycode.value+
+			"&ship_method="+frm.shipping_method.value+
+			"&order_id="+Math.floor(Math.random() * 1000000000)
+		);
+}
+
 /*
 	form_validate()
 	Makes sure every field contains some value.
@@ -242,7 +279,8 @@ function form_validate() {
 		else {alert(messages.join('\n'));}
 		return false;
 	}
-	mail_order_body();
+	
+	submit_order();
 
 	return true;
 }

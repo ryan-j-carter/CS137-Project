@@ -29,7 +29,7 @@ $stmt = $pdo->query("SELECT * FROM product");
         <div id="nav" class="nav_rel">
             <ul>
                 <li><a href="index.html">Home</a></li><!-- display inline block :(
-             --><li><a class="active" href="products.html">Products</a></li>
+             --><li><a class="active" href="products.php">Products</a></li>
             </ul>
         </div>
 		<div id="firstcontent" class="products">
@@ -52,7 +52,7 @@ $stmt = $pdo->query("SELECT * FROM product");
 				}
 				if ($c > $max_cols) {
 					echo '</tr><tr><td>';
-					echo '<a href="checkout2.php?i='.$product_id.'"><img src="'.$image_src.'" alt="'.$name.'"></a>';
+					echo '<a href="checkout.php?i='.$product_id.'"><img src="'.$image_src.'" alt="'.$name.'"></a>';
 					echo '<figcaption>'.$name.'<br>$'.$price.'</figcaption></td>';
 					$c = 2;
 				}
@@ -61,7 +61,7 @@ $stmt = $pdo->query("SELECT * FROM product");
 						echo '<tr>';
 					}
 					echo '<td>';
-					echo '<a href="checkout2.php?i='.$product_id.'"><img src="'.$image_src.'" alt="'.$name.'"></a>';
+					echo '<a href="checkout.php?i='.$product_id.'"><img src="'.$image_src.'" alt="'.$name.'"></a>';
 					echo '<figcaption>'.$name.'<br>$'.$price.'</figcaption></td>';
 					$c++;
 				}	
