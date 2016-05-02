@@ -99,15 +99,15 @@ require_once "pdo.php";
                         <p>Address:</p>
                         <input type="text" name="addr_s" tabindex="5" required>
                         <p>State:</p>
-                        <input type="text" name="state_s" size="2" maxlength="2" tabindex="7" required>
+                        <input type="text" name="state_s" id="state_s" size="2" maxlength="2" tabindex="7" required>
                         <p>Phone Number:</p>
                         <input type="text" name="pnumber_s" size="10" maxlength="10" tabindex="9" required>
                     </div>
                     <div class="form_right">
                         <p>City:</p>
-                        <input type="text" name="city_s" tabindex="6" required>
+                        <input type="text" name="city_s" id="city_s" tabindex="6" required>
                         <p>Zip Code:</p>
-                        <input type="text" name="zip_s" size="5" maxlength="5" tabindex="8" required>
+                        <input type="text" name="zip_s" id="zip_s" size="5" maxlength="5" tabindex="8" required onblur="getPlace(this.value)">
                     </div>
                 </div>
                 <div class="form_container">
