@@ -6,6 +6,9 @@
 
     checkout.html
 -->
+<?php
+require_once "pdo.php";
+?>
 <html>
     <head>
         <title>JavaSipt - Checkout</title>
@@ -14,10 +17,10 @@
         <link rel="stylesheet" href="styles.css"/>
         <link rel="SHORTCUT ICON" href="images/favicon.ico"/>
         <link rel="icon" href="images/favicon.ico" type="image/ico"/>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
         <script src="scripts.js"></script>
     </head>
-    <body onload="window_onload();set_checkout();">
+    <body onload="set_checkout();">
         <div id="nav" class="nav_rel">
             <ul>
                 <li><a href="index.html">Home</a></li><!-- display inline block :(
@@ -25,34 +28,44 @@
             </ul>
         </div>
         <div id="firstcontent" class="checkout">
+            <?php
+            require_once "pdo.php";
+            $i = $_GET['i'];
+            $stmt = $pdo->query("SELECT * FROM product WHERE product_id = $i");
+            $row = $stmt->fetch();
+            ?>
             <div id="item_info">
-                <h2 id="co_item_name" class="co_item_text">Item Name</h2>
-                <h3 id="co_item_price" class="co_item_text">$0</h3>
-                <img id="co_item_img" src="" alt="You shouldn't be here, mate.">
-                <p id="co_item_desc" class="co_item_text">Description Here.</p>
+                <h2 id="co_item_name" class="co_item_text"><?php echo $row['name']; ?></h2>
+                <h3 id="co_item_price" class="co_item_text">$<?php echo $row['price']; ?></h3>
+                <img id="co_item_img" src=<?php echo '"'; echo $row['image_src']; echo '"'; ?> alt="You shouldn't be here, mate.">
+                <p id="co_item_desc" class="co_item_text"><?php echo $row['description']; ?></p>
             </div>
             <form name="checkout_form" id="checkout_form" method="get" action="">
                 <div class="form_container">
                     <h3>Product:</h3>
-                    <select name="product" size="1" onchange="load_changed();" tabindex="1">
-                        <optgroup label="Gear" >
-                            <option value="0">Aeropress</option>
-                            <option value="1">Baratza Encore</option>
-                            <option value="2">Baratza Virtuoso</option>
-                            <option value="3">Bonavita Kettle</option>
-                            <option value="4">Chemex</option>
-                            <option value="5">Hario Kettle</option>
-                            <option value="6">Kalita Wave</option>
-                            <option value="7">V60</option>
-                        </optgroup>
-                        <optgroup label="Beans">
-                            <option value="8">Costa Rica La Minita</option>
-                            <option value="9">Ethiopia Halo Bariti</option>
-                            <option value="10">Ethiopia Kochere</option>
-                            <option value="11">Guatemala Antigua Hunapu</option>
-                            <option value="12">Guatemala Candelaria</option>
-                            <option value="13">Honduras Las Capucas</option>
-                        </optgroup>
+                    <select name="product" size="1" onchange="load_changed(this.value);" tabindex="1">
+                        <?php
+                        $stmt = $pdo->query("SELECT * FROM product");
+                        $type="";
+                        foreach($stmt as $row) {
+                            if ($row['type'] != $type) {
+                                if ($type != "") {
+                                    echo "</optgroup>";
+                                }
+                                echo "<optgroup label=\"";
+                                echo ucfirst($row['type']);
+                                echo "\">";
+                                $type=$row['type'];
+                            }
+                            echo "<option value=\"";
+                            echo $row['product_id'];
+                            echo "\">";
+                            echo $row['name'];
+                            echo "</option>";
+                        }
+                        echo "</optgroup>";
+                        ?>
+                        
                     </select>
                 </div>
                 <div class="form_container">
