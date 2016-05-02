@@ -20,7 +20,7 @@ require_once "pdo.php";
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
         <script src="scripts.js"></script>
     </head>
-    <body onload="set_checkout();">
+    <body>
         <div id="nav" class="nav_rel">
             <ul>
                 <li><a href="index.html">Home</a></li><!-- display inline block :(
@@ -30,7 +30,7 @@ require_once "pdo.php";
         <div id="firstcontent" class="checkout">
             <?php
             require_once "pdo.php";
-            $i = $_GET['i'];
+            $i = isset($_GET['i']) ? $_GET['i'] : "0";
             $stmt = $pdo->query("SELECT * FROM product WHERE product_id = $i");
             $row = $stmt->fetch();
             ?>
@@ -65,6 +65,7 @@ require_once "pdo.php";
                         }
                         echo "</optgroup>";
                         ?>
+			<script>set_checkout();</script>
                         
                     </select>
                 </div>
