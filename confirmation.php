@@ -48,7 +48,7 @@ require_once "pdo.php";
 			Phone Number: <?php echo $row['bill_phone']; ?><br /><br />
 			<h4>Payment Method: <?php echo $row['payment_method']; ?></h4><br />
 			<h4>Card Information:</h4>
-			Card Number: ************<?php echo substr(strval($row['payment_method']),12; ?><br />
+			Card Number: ************<?php echo substr(strval($row['payment_method']),12); ?><br />
 			Name on Card: <?php echo $row['card_name']; ?><br />
 			Expiration Date: <?php echo $row['card_expiration_month']; ?> <?php echo $row['card_expiratin+year']; ?><br /><br />
 			<h4>Shipping Method: <?php echo $row['ship_method']; ?></h4>
