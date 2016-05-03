@@ -125,7 +125,7 @@ require_once "pdo.php";
                         <p>City:</p>
                         <input type="text" name="city" tabindex="12" required>
                         <p>Zip Code:</p>
-                        <input type="text" name="zip" size="5" maxlength="5" tabindex="14" required>
+                        <input type="text" name="zip" size="5" maxlength="5" tabindex="14" required onblur="getPlace(this.value)">
                     </div>
                 </div>
                 <div class="form_container">
