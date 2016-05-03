@@ -176,16 +176,14 @@ function submit_order() {
 	var frm = document.checkout_form;
 	var xhttp = new XMLHttpRequest();
 	var item_name = document.getElementById("co_item_name").innerHTML;
-	var item_price = document.getElementById("co_item_price").innerHTML;
-	
+
 	var order_num = Math.floor(Math.random() * 1000000000);
-	var cost = parseInt(frm.quantity.value)*parseInt(item_price.substring(1));
-	cost += parseInt(frm.shipping_method.value);
+	
 	xhttp.onreadystatechange = function() {
 		if(xhttp.readyState == 4 && xhttp.status == 200){
 			alert("Submission Complete.");
 			// opens confirmation page with randomly generated order number
-			window.location = "confirmation.php?order_id=" + order_num + "&c=" + cost;
+			window.location = "confirmation.php?order_id=" + order_num;
 		}
 	}
 
@@ -210,7 +208,7 @@ function submit_order() {
 			"&card_expiration_month="+frm.month.value+
 			"&card_expiration_year="+frm.year.value+
 			"&card_security="+frm.securitycode.value+
-			"&ship_method="+frm.shipping_method.value+
+			"&ship_method="+frm.shipping_method.options[frm.shipping_method.selectedIndex].text+
 			"&order_id="+order_num
 		);
 }
