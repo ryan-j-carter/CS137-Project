@@ -24,7 +24,7 @@ require_once "pdo.php";
     	<div id="header">
             <h1 id="title">Order Confirmation</h1>
         </div>
-		<div id="firstcontent" class="products">
+		<div class="products">
 			<?php
 			require_once "pdo.php";
 			$order_id = $_GET['order_id'];
