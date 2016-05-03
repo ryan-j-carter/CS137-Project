@@ -177,7 +177,7 @@ function submit_order() {
 	var xhttp = new XMLHttpRequest();
 	var item_name = document.getElementById("co_item_name").innerHTML;
 
-	var order_num = Math.floor(Math.random() * 1000000000)
+	var order_num = Math.floor(Math.random() * 1000000000);
 	
 	xhttp.onreadystatechange = function() {
 		if(xhttp.readyState == 4 && xhttp.status == 200){
