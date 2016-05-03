@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--
     CS 137
-    Project 1
+    Project 2
     Group 1
 
-    products.html
+    products.php
 -->
 
 <?php
