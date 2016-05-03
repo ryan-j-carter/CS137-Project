@@ -177,9 +177,13 @@ function submit_order() {
 	var xhttp = new XMLHttpRequest();
 	var item_name = document.getElementById("co_item_name").innerHTML;
 
+	var order_num = Math.floor(Math.random() * 1000000000)
+	
 	xhttp.onreadystatechange = function() {
 		if(xhttp.readyState == 4 && xhttp.status == 200){
-			alert("Submission Complete."); // CHANGE THIS FUNCTION TO BE A CONFIRMATION
+			alert("Submission Complete.");
+			// opens confirmation page with randomly generated order number
+			window.location = "confirmation.php?order_id=" + order_num;
 		}
 	}
 
@@ -205,7 +209,7 @@ function submit_order() {
 			"&card_expiration_year="+frm.year.value+
 			"&card_security="+frm.securitycode.value+
 			"&ship_method="+frm.shipping_method.value+
-			"&order_id="+Math.floor(Math.random() * 1000000000)
+			"&order_id="+order_num
 		);
 }
 
