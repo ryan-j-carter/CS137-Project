@@ -41,17 +41,18 @@ require_once "pdo.php";
 		<h4>Product Information:</h4>
 		<p><?php echo $row['product_name']." - $".$row['price'];  ?></p>
 		<p>Quantity: <?php echo $row['quantity'];  ?><br>
-		<?php if ($row['ship_method'] == 6){
-			$ship = "6-Days Ground - $3";
-			$ship_price = 3;
-		}
-		else if ($row['ship_method'] == 2) {
+		<?php 
+		if ($row['ship_method'] == 6) {
 			$ship = "2-Days Expedited - $6";
 			$ship_price = 6;
 		} 
-		else {
+		else if ($row['ship_method'] == 10) {
 			$ship = "Overnight - $10";
 			$ship_price = 10;
+		}
+		else {
+			$ship = "6-Days Ground - $3";
+			$ship_price = 3;
 		}
 		$subtotal = $row['price']*$row['quantity'] + $ship_price;
 		?>

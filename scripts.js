@@ -143,31 +143,6 @@ function form_reset() {
 	Pulls necessary values from the form and creates a formatted order receipt in the body of an email.
 */
 
-function mail_order_body() {
-	var frm = document.checkout_form;
-	var item_name = document.getElementById("co_item_name").innerHTML;
-	var item_price = document.getElementById("co_item_price").innerHTML;
-	var subtotal = "$" + (parseInt(item_price.replace(/[^0-9]+/g,"")) * parseInt(frm.quantity.value) + parseInt(frm.shipping_method.value)).toString() + ".00";
-
-	var ebody = "Order Receipt\n" 
-	+			"---------------------------------------\n"
-	+			item_name + " - " + item_price
-	+ 			"\nQuantity: " + frm.quantity.value
-	+			"\nShipping Speed: " + frm.shipping_method.options[frm.shipping_method.selectedIndex].text
-	+ 			"\nSubtotal: " + subtotal + "\n"
-	+			"Card Number: xxxxxxxxxxxx" + frm.cardnumber.value.substring(12,16) 
-	+			"\n\nBilling Information: \n"
-	+			frm.fname.value + " " + frm.lname.value + "\n"
-	+			frm.addr.value + "\n"
-	+			frm.city.value + ", " + frm.state.value + " " + frm.zip.value + "\n\n"
-	+			"Shipping Address: \n"
-	+			frm.addr_s.value + "\n"
-	+			frm.city_s.value + ", " + frm.state_s.value + " " + frm.zip_s.value
-	+			"\n\nThank you for your order!\n\n";
-
-	window.location.href = "mailto:email@address.com?body=" + encodeURIComponent(ebody);
-}
-
 function has_num(n) {
 	return n.match(/\d+/g) != null;
 }
@@ -208,7 +183,7 @@ function submit_order() {
 			"&card_expiration_month="+frm.month.value+
 			"&card_expiration_year="+frm.year.value+
 			"&card_security="+frm.securitycode.value+
-			"&ship_method="+frm.shipping_method.options[frm.shipping_method.selectedIndex].text+
+			"&ship_method="+frm.shipping_method.value+
 			"&order_id="+order_num
 		);
 }

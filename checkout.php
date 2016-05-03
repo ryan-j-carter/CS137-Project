@@ -177,7 +177,7 @@ require_once "pdo.php";
                 </div>
                 <div class="form_container">
                     <p>Shipping Method:</p>
-                    <select name="shipping_method" size="1" tabindex="22" required>
+                    <select id="ships" name="shipping_method" size="1" tabindex="22" required>
                         <option value="3">6-Days Ground - $3</option>
                         <option value="6">2-Days Expedited - $6</option>
                         <option value="10">Overnight - $10</option>
