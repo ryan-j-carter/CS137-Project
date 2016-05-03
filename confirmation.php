@@ -54,8 +54,5 @@ require_once "pdo.php";
 			<h4>Shipping Method: <?php echo $row['ship_method']; ?></h4>
 			<h3 align="center"><a href="index.html"">Return to Home</a></h3>
 		</div>
-		<form>
-			
-		</form>
     </body>
 </html>
