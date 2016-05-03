@@ -28,6 +28,7 @@ require_once "pdo.php";
 			<?php
 			require_once "pdo.php";
 			$order_id = $_GET['order_id'];
+			$cost = $_GET['c'];
 			$stmt = $pdo->query("SELECT * FROM orders WHERE order_id = $order_id");
 			$row = $stmt->fetch();
 			?>
@@ -46,12 +47,15 @@ require_once "pdo.php";
 			State: <?php echo $row['bill_state']; ?><br />
 			Zip Code: <?php echo $row['bill_zip']; ?><br />
 			Phone Number: <?php echo $row['bill_phone']; ?><br /><br />
-			<h4>Payment Method: <?php echo $row['payment_method']; ?></h4><br />
+			<h4>Payment Method: <?php echo $row['payment_method']; ?></h4>
 			<h4>Card Information:</h4>
 			Card Number: ************<?php echo substr(strval($row['payment_method']),12); ?><br />
 			Name on Card: <?php echo $row['card_name']; ?><br />
 			Expiration Date: <?php echo $row['card_expiration_month']; ?> <?php echo $row['card_expiratin+year']; ?><br /><br />
-			<h4>Shipping Method: <?php echo $row['ship_method']; ?></h4>
+			<h4>Order Details:</h4>	
+			Item Purchased: <?php echo $row['product_name']; ?><br />
+			Quantity: <?php echo $row['quantity']; ?><br />
+			Total Cost: $<?php echo $cost; ?><br /><br />
 			<h3 align="center"><a href="index.html"">Return to Home</a></h3>
 		</div>
     </body>
