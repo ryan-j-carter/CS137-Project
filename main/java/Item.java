@@ -41,7 +41,7 @@ public class Item extends HttpServlet {
                     + "<div id=\"nav\" class=\"nav_rel\">\n"
                     + "<ul>\n"
                     + "<li><a class=\"active\" href=\"index.jsp\">Home</a></li><!-- display inline block :(\n"
-                    + "--><li><a href=\"products.php\">Products</a></li>\n"
+                    + "--><li><a href=\"/project3/viewcart\">View Cart</a></li>\n"
                     + "</ul>\n</div>\n<div id=\"firstcontent\" class=\"content\">";
             out.println(doc);
             
