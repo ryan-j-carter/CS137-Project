@@ -22,10 +22,6 @@
         </div>
         <div id="firstcontent" class="content">
             <jsp:include page="/products" flush="true"/>
-            <div id="rightcol">
-                <h2>Recent</h2>
-                <div class="hr_div"></div>
-            </div>
         </div>
     </body>
 </html>

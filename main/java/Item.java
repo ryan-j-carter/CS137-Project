@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = {"/item"})
 public class Item extends HttpServlet {
@@ -16,6 +17,7 @@ public class Item extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
         
         String DB_URL = "jdbc:mysql://sylvester-mccoy-v3.ics.uci.edu/inf124grp01";
         String USER   = "inf124grp01";
@@ -51,6 +53,16 @@ public class Item extends HttpServlet {
             pstmt.setString(1, id);
             ResultSet rs = pstmt.executeQuery();
             rs.next();
+            
+            /*RecentQueue rq;
+            rq = (RecentQueue) session.getAttribute("rq");
+            if (rq == null) {
+                rq = new RecentQueue();
+                session.setAttribute("rq", rq);
+            }
+            rq.add(id);
+            session.setAttribute("rq", rq);*/
+            
             out.println("<div id=\"item_info\">");
             out.println("<h2 id=\"co_item_name\" class=\"co_item_text\">"+rs.getString("name")+"</h2>");
             out.println("<p id=\"co_item_desc\" class=\"co_item_text\">"+rs.getString("description")+"</p>");
