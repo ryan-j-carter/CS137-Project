@@ -75,38 +75,12 @@ public class GetProducts extends HttpServlet {
             out.println("</table>");
             out.println("</div>");
             
-            //Output column for Recent
-            out.println("<div id=\"rightcol\">");
-            out.println("<h2>Recent<h2>");
-            out.println("<div class=\"hr_div\"></div>");
-            out.println("<table>");
-            
-            RecentQueue rq;
-            rq = (RecentQueue) session.getAttribute("rq");
-            if(rq == null)
-            {
-                rq = new RecentQueue();
-                session.setAttribute("rq", rq);
-            }
-            for(int i = 0; i < rq.getLength(); i++)
-            {
-                String itemAtIndex = rq.getAtIndex(i);
-                if(itemAtIndex == null) break;
-                sql = "SELECT * FROM product WHERE product_id=".concat(itemAtIndex).concat("LIMIT 1");
-                rs = stmt.executeQuery(sql);
-                out.println("<tr><td><a href=\"/project3/item?id="+rs.getString("product_id")+"\"><img src=\""+rs.getString("image_src")+"\" alt=\""+rs.getString("name")+"\"/></a>");
-                out.println("<figcaption>"+rs.getString("name")+"<br>$"+rs.getString("price")+"</figcaption></td></tr>");
-            }
-            
-            out.println("</table>");
-            out.println("</div>");
-            
             rs.close();
             stmt.close();
             conn.close();
         }
         catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(out);
         }
     }
 }

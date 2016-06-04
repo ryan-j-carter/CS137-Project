@@ -54,15 +54,15 @@ public class Item extends HttpServlet {
             ResultSet rs = pstmt.executeQuery();
             rs.next();
             
-            /*RecentQueue rq;
+            RecentQueue rq = null;
             rq = (RecentQueue) session.getAttribute("rq");
             if (rq == null) {
                 rq = new RecentQueue();
                 session.setAttribute("rq", rq);
             }
             rq.add(id);
-            session.setAttribute("rq", rq);*/
-            
+            session.setAttribute("rq", rq);
+
             out.println("<div id=\"item_info\">");
             out.println("<h2 id=\"co_item_name\" class=\"co_item_text\">"+rs.getString("name")+"</h2>");
             out.println("<p id=\"co_item_desc\" class=\"co_item_text\">"+rs.getString("description")+"</p>");
@@ -81,7 +81,7 @@ public class Item extends HttpServlet {
             conn.close();
         }
         catch(Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(out);
         }
     }
 }

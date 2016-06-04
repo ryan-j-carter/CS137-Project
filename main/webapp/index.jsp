@@ -22,6 +22,7 @@
         </div>
         <div id="firstcontent" class="content">
             <jsp:include page="/products" flush="true"/>
+            <jsp:include page="/recent" flush="true"/>
         </div>
     </body>
 </html>
