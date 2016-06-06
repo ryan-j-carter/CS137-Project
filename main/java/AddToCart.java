@@ -68,7 +68,7 @@ public class AddToCart extends HttpServlet {
             out.println("<table class=\"addtocart\">");
             out.println("<tr><td><img src=\""+rs.getString("image_src")+"\" alt=\""+rs.getString("name")+"\"></td>");
             out.println("<td>"+rs.getString("name")+"</td><td>$"+rs.getString("price")+"</td>");
-            out.println("<td><a href=\"/project3/viewcart\" class=\"button\">View Cart</a><br><a href=\"/project3/item?id="+id+"\" class=\"button\">Go Back</a></td></tr>");
+            out.println("<td><a href=\"/project3/viewcart\" class=\"button\">View Cart</a><br><br><a href=\"/project3/item?id="+id+"\" class=\"button\">Go Back</a></td></tr>");
             out.println("</table>");
             
             out.println("</div>\n</body>\n</html>");
